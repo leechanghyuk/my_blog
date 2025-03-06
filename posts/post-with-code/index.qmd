@@ -5,7 +5,6 @@ date: "2025-03-06"
 categories: [news, code, analysis]
 image: "image.jpg"
 ---
-
 ## 8조 (이주형, 이창혁, 정은주 )
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN0a0aHzCUujR1EMQFoR3U6DTZXjXKs8kVpR7vuVj3dRRTnRlSC4QZVqNUlMwZxM6FKNs&usqp=CAU){fig-align="center" fig-width=100%}
 
@@ -131,51 +130,3 @@ peng_mean
 
 - 전체
     - 종별 성별은 고르게 분포되어 있다.
-
-# tip 
-
-# 1.
-# chunk 밖에서 코드 보여주는 법
-# -> `{python}int(na_check.iloc[2])`
-
-# 2.
-# 키자마자 바로 중간부터 돌리면 안돌아가니 
-# run above 돌린 다음 돌리기 
-
-# 3. 
-# 코드가 안보이게 하는 법 
-# ' #| echo: ' 밑에 코드를 넣으면 보이지 않음 
-
-```{python}
-#| echo: false
-ade_desc =penguins.loc[(penguins['species'] == 'Adelie') & (penguins['island']=='Dream')].describe()
-
-gen_desc =penguins.loc[(penguins['species'] == 'Adelie') & (penguins['island']=='Torgersen')].describe()
-
-chin_desc = penguins.loc[(penguins['species'] == 'Adelie') & (penguins['island']=='Biscoe')].describe()
-
-ade_mean = ade_desc.loc['mean']
-gen_mean = gen_desc.loc['mean']
-chin_mean = chin_desc.loc['mean']
-
-peng_mean = pd.concat([ade_mean, gen_mean, chin_mean], axis=1)
-peng_mean.columns= ['Dream', 'Torgersen', 'Biscoe']
-peng_mean
-
-```
-# 4. 
-# 평균 값을 예쁘게 해놓기 위해 
-# round(species_mean, ndigits= 2)
-
-# 영어 column 들을 바꾸기 위해 
-# species_mean.columns = ['부리 길이','부리 깊이',.....]
-
-```{python}
-#| eval: false
-
-species_means = penguins.groupby(['species', 'sex']).mean(numeric_only=True)
-print(species_means)
-species_means.columns = ['부리 길이','부리 너비','날개 길이','몸무게','관측 년도']
-species_means.index.names =['종','이름']
-
-```

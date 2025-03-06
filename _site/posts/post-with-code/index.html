@@ -205,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="팔마-펭귄-데이터-불러오기-데이터-확인" class="level3">
 <h3 class="anchored" data-anchor-id="팔마-펭귄-데이터-불러오기-데이터-확인">팔마 펭귄 데이터 불러오기 &amp; 데이터 확인</h3>
-<div id="0af39e41" class="cell" data-execution_count="1">
+<div id="12b07995" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
@@ -239,7 +239,7 @@ memory usage: 21.6+ KB</code></pre>
 </section>
 <section id="필요-없는-column-제거" class="level3">
 <h3 class="anchored" data-anchor-id="필요-없는-column-제거">필요 없는 column 제거</h3>
-<div id="7271614b" class="cell" data-execution_count="2">
+<div id="11ece49d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(penguins[<span class="st">'year'</span>].unique())</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'-'</span><span class="op">*</span><span class="dv">50</span>,<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> penguins[<span class="st">'year'</span>]</span>
@@ -269,7 +269,7 @@ memory usage: 21.6+ KB</code></pre>
 </section>
 <section id="종-별-수치-정보" class="level3">
 <h3 class="anchored" data-anchor-id="종-별-수치-정보">종 별 수치 정보</h3>
-<div id="fd9f2104" class="cell" data-execution_count="3">
+<div id="3a6ce32b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ade_desc <span class="op">=</span> penguins.loc[penguins[<span class="st">'species'</span>] <span class="op">==</span> <span class="st">'Adelie'</span>].describe()</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>gen_desc <span class="op">=</span> penguins.loc[penguins[<span class="st">'species'</span>] <span class="op">==</span> <span class="st">'Gentoo'</span>].describe()</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>chin_desc <span class="op">=</span> penguins.loc[penguins[<span class="st">'species'</span>] <span class="op">==</span> <span class="st">'Chinstrap'</span>].describe()</span>
@@ -354,7 +354,7 @@ memory usage: 21.6+ KB</code></pre>
 </section>
 <section id="성별-파악" class="level3">
 <h3 class="anchored" data-anchor-id="성별-파악">성별 파악</h3>
-<div id="b0c63377" class="cell" data-execution_count="4">
+<div id="69059103" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>adelie_sex <span class="op">=</span> penguins.loc[penguins[<span class="st">'species'</span>] <span class="op">==</span> <span class="st">'Adelie'</span>, <span class="st">'sex'</span>].value_counts()</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>gentoo_sex <span class="op">=</span> penguins.loc[penguins[<span class="st">'species'</span>] <span class="op">==</span> <span class="st">'Gentoo'</span>, <span class="st">'sex'</span>].value_counts()</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>chinstrap_sex <span class="op">=</span> penguins.loc[penguins[<span class="st">'species'</span>] <span class="op">==</span> <span class="st">'Chinstrap'</span>, <span class="st">'sex'</span>].value_counts()</span>
@@ -404,7 +404,7 @@ memory usage: 21.6+ KB</code></pre>
 </section>
 <section id="서식지-파악" class="level3">
 <h3 class="anchored" data-anchor-id="서식지-파악">서식지 파악</h3>
-<div id="bc45cc8c" class="cell" data-execution_count="5">
+<div id="a8a67011" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>adelie_island <span class="op">=</span> penguins.loc[penguins[<span class="st">'species'</span>] <span class="op">==</span> <span class="st">'Adelie'</span>, <span class="st">'island'</span>].value_counts()</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Adelie 종은 Dream, Torgersen, Biscoe 섬에 고루 서식한다.</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -469,7 +469,7 @@ memory usage: 21.6+ KB</code></pre>
 </section>
 <section id="adelie-종에-대한-서식지-별-수치-정보" class="level3">
 <h3 class="anchored" data-anchor-id="adelie-종에-대한-서식지-별-수치-정보">adelie 종에 대한 서식지 별 수치 정보</h3>
-<div id="39d3ebdf" class="cell" data-execution_count="6">
+<div id="9bf433a5" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ade_desc <span class="op">=</span>penguins.loc[(penguins[<span class="st">'species'</span>] <span class="op">==</span> <span class="st">'Adelie'</span>) <span class="op">&amp;</span> (penguins[<span class="st">'island'</span>]<span class="op">==</span><span class="st">'Dream'</span>)].describe()</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>gen_desc <span class="op">=</span>penguins.loc[(penguins[<span class="st">'species'</span>] <span class="op">==</span> <span class="st">'Adelie'</span>) <span class="op">&amp;</span> (penguins[<span class="st">'island'</span>]<span class="op">==</span><span class="st">'Torgersen'</span>)].describe()</span>
@@ -555,105 +555,9 @@ memory usage: 21.6+ KB</code></pre>
 <li>종별 성별은 고르게 분포되어 있다.</li>
 </ul></li>
 </ul>
-</section>
-</section>
-<section id="tip" class="level1">
-<h1>tip</h1>
-</section>
-<section id="section" class="level1">
-<h1>1.</h1>
-</section>
-<section id="chunk-밖에서-코드-보여주는-법" class="level1">
-<h1>chunk 밖에서 코드 보여주는 법</h1>
-</section>
-<section id="pythonintna_check.iloc2" class="level1">
-<h1>-&gt; <code>{python}int(na_check.iloc[2])</code></h1>
-</section>
-<section id="section-1" class="level1">
-<h1>2.</h1>
-</section>
-<section id="키자마자-바로-중간부터-돌리면-안돌아가니" class="level1">
-<h1>키자마자 바로 중간부터 돌리면 안돌아가니</h1>
-</section>
-<section id="run-above-돌린-다음-돌리기" class="level1">
-<h1>run above 돌린 다음 돌리기</h1>
-</section>
-<section id="section-2" class="level1">
-<h1>3.</h1>
-</section>
-<section id="코드가-안보이게-하는-법" class="level1">
-<h1>코드가 안보이게 하는 법</h1>
-</section>
-<section id="echo-밑에-코드를-넣으면-보이지-않음" class="level1">
-<h1>’ #| echo: ’ 밑에 코드를 넣으면 보이지 않음</h1>
-<div id="719ad2eb" class="cell" data-execution_count="7">
-<div class="cell-output cell-output-display" data-execution_count="7">
-<div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Dream</th>
-<th data-quarto-table-cell-role="th">Torgersen</th>
-<th data-quarto-table-cell-role="th">Biscoe</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">bill_length_mm</td>
-<td>38.501786</td>
-<td>38.950980</td>
-<td>38.975000</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">bill_depth_mm</td>
-<td>18.251786</td>
-<td>18.429412</td>
-<td>18.370455</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">flipper_length_mm</td>
-<td>189.732143</td>
-<td>191.196078</td>
-<td>188.795455</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">body_mass_g</td>
-<td>3688.392857</td>
-<td>3706.372549</td>
-<td>3709.659091</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
 </section>
-<section id="section-3" class="level1">
-<h1>4.</h1>
-</section>
-<section id="평균-값을-예쁘게-해놓기-위해" class="level1">
-<h1>평균 값을 예쁘게 해놓기 위해</h1>
-</section>
-<section id="roundspecies_mean-ndigits-2" class="level1">
-<h1>round(species_mean, ndigits= 2)</h1>
-</section>
-<section id="영어-column-들을-바꾸기-위해" class="level1">
-<h1>영어 column 들을 바꾸기 위해</h1>
-</section>
-<section id="species_mean.columns-부리-길이부리-깊이.." class="level1">
-<h1>species_mean.columns = [‘부리 길이’,‘부리 깊이’,…..]</h1>
-<div id="74d5a0aa" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>species_means <span class="op">=</span> penguins.groupby([<span class="st">'species'</span>, <span class="st">'sex'</span>]).mean(numeric_only<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(species_means)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>species_means.columns <span class="op">=</span> [<span class="st">'부리 길이'</span>,<span class="st">'부리 너비'</span>,<span class="st">'날개 길이'</span>,<span class="st">'몸무게'</span>,<span class="st">'관측 년도'</span>]</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>species_means.index.names <span class="op">=</span>[<span class="st">'종'</span>,<span class="st">'이름'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-
-
 </section>
 
 </main> <!-- /main -->
