@@ -1,0 +1,31 @@
+---
+title: "qmd 연습"
+format: html
+html : 
+    toc : True
+    toc-depth : 3
+    number-section : true
+    code-fold: show
+theme : cosmo
+highlight-style : github
+search : true
+jupyter: python3
+---
+```{python}
+#| fig-width: 3
+#| fig-height: 5
+#| fig-align: center
+#| fig-cap: "x^2 플롯"
+import numpy as np
+import matplotlib.pyplot as plt 
+x = np.linspace(-10,10,100)
+y = x**2
+plt.figure(figsize=(6, 4))
+plt.plot(x, y, label="x^2", color="red")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+```
+
+# y = x^2 의 그래프를 -10에서 10까지 그려보기 
